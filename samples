@@ -1,438 +1,81 @@
-{
-  "Header": {
-    "Key": "h",
-    "PRNumber": "PR-2026-0142",
-    "Title": "Endpoint Security Modernization",
-    "PRID": 142,
-    "RequirementName": "Endpoint security tools and support",
-    "IGCETypeName": "Time & Materials/Labor Hours",
-    "StatusName": "Draft",
-    "POCName": "Jordan Lee",
-    "CORName": "Sam Rivera",
-    "OptionPeriods": 2,
-    "BaseStart": "10/01/2026",
-    "BaseEnd": "09/30/2027",
-    "OP1Start": "10/01/2027",
-    "OP1End": "09/30/2028",
-    "OP2Start": "10/01/2028",
-    "OP2End": "09/30/2029",
-    "OP3Start": "",
-    "OP3End": "",
-    "OP4Start": "",
-    "OP4End": "",
-    "FringeRate": 32.5,
-    "OverheadRate": 18.0,
-    "GAndARate": 9.5,
-    "FCCOMRate": 0.8,
-    "ProfitFeeRate": 7.0,
-    "ContractAccessFeeRate": 2.0,
-    "InflationRate": 3.0,
-    "TotalAccountableProperty": 66948.9,
-    "ContainsGFP": true,
-    "GFPQ1": "Furnishing the existing licences avoids paying for them twice.",
-    "GFPQ2": "The work runs on the agency's own managed devices.",
-    "GFPQ3": "The devices are already tracked.",
-    "GFPQ4": "The agency keeps custody of every device.",
-    "GFPQ5": "Only agency devices can join the network.",
-    "GFPQ6": "Contractor devices are not permitted on the network.",
-    "InformationObtainedFrom": "Information obtained from: sample basis text for the test export.",
-    "InformationToolsUsed": "Information / tools used: sample basis text for the test export.",
-    "PreviousContracts": "Previous contracts: sample basis text for the test export.",
-    "LaborBasis": "Labor: sample basis text for the test export.",
-    "LaborCategoriesBasis": "Labor categories: sample basis text for the test export.",
-    "LaborRatesBasis": "Labor rates: sample basis text for the test export.",
-    "HoursBasis": "Hours: sample basis text for the test export.",
-    "UnburdenedDirectLaborBasis": "Unburdened direct labor: sample basis text for the test export.",
-    "IndirectRatesBasis": "Indirect rates: sample basis text for the test export.",
-    "GAndABasis": "G&A: sample basis text for the test export.",
-    "FCCOMBasis": "Facilities cost of money (FCCOM): sample basis text for the test export.",
-    "FixedFeeBasis": "Fixed fee: sample basis text for the test export.",
-    "IndirectBurdenBasis": "Indirect burden: sample basis text for the test export.",
-    "DirectMaterialBasis": "Direct material: sample basis text for the test export.",
-    "ProductsSuppliesBasis": "Products / supplies: sample basis text for the test export.",
-    "SubcontractsBasis": "Subcontracts: sample basis text for the test export.",
-    "ODCBasis": "Other direct costs: sample basis text for the test export.",
-    "TravelBasis": "Travel: sample basis text for the test export.",
-    "Assumptions": "Assumptions: sample basis text for the test export.",
-    "PreparedBy": "Test User",
-    "PreparedOn": "10/20/2026 4:45 PM"
-  },
-  "Lines": [
-    {
-      "ID": 901,
-      "LineNumber": 1,
-      "Description": "Security engineering support",
-      "CategoryName": "Labor",
-      "BaseYearQuantity": 3760,
-      "BaseYearTotalCost": 756515.62,
-      "OP1Quantity": 3760,
-      "OP1TotalCost": 779211.09,
-      "OP2Quantity": 3760,
-      "OP2TotalCost": 802591.47,
-      "OP3Quantity": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4TotalCost": null,
-      "TotalCost": 2338318.18,
-      "TotalAccountableProperty": 0.0
-    },
-    {
-      "ID": 902,
-      "LineNumber": 2,
-      "Description": "Endpoint agent licences",
-      "CategoryName": "Products/Supplies",
-      "BaseYearQuantity": 1200,
-      "BaseYearTotalCost": 50400.0,
-      "OP1Quantity": 1200,
-      "OP1TotalCost": 51912.0,
-      "OP2Quantity": 1200,
-      "OP2TotalCost": 53472.0,
-      "OP3Quantity": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4TotalCost": null,
-      "TotalCost": 155784.0,
-      "TotalAccountableProperty": 0.0
-    },
-    {
-      "ID": 903,
-      "LineNumber": 3,
-      "Description": "Site visits",
-      "CategoryName": "Travel",
-      "BaseYearQuantity": 4,
-      "BaseYearTotalCost": 7400.0,
-      "OP1Quantity": 4,
-      "OP1TotalCost": 7622.0,
-      "OP2Quantity": 4,
-      "OP2TotalCost": 7850.64,
-      "OP3Quantity": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4TotalCost": null,
-      "TotalCost": 22872.64,
-      "TotalAccountableProperty": 0.0
-    },
-    {
-      "ID": 904,
-      "LineNumber": 4,
-      "Description": "Test lab workstations",
-      "CategoryName": "Accountable Property",
-      "BaseYearQuantity": 12,
-      "BaseYearTotalCost": 21660.0,
-      "OP1Quantity": 12,
-      "OP1TotalCost": 22309.8,
-      "OP2Quantity": 12,
-      "OP2TotalCost": 22979.1,
-      "OP3Quantity": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4TotalCost": null,
-      "TotalCost": 66948.9,
-      "TotalAccountableProperty": 66948.9
-    }
-  ],
-  "Sublines": [
-    {
-      "LineNumber": 1,
-      "LineDescription": "Security engineering support",
-      "CategoryName": "Labor",
-      "Title": "Senior Security Engineer",
-      "TypeName": "Labor Hours",
-      "UnitsName": "HR - Hours",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "",
-      "IncludesProperty": false,
-      "SerialNumber": "",
-      "Software": false,
-      "BaseYearQuantity": 1880,
-      "BaseYearRate": 145.0,
-      "BaseYearTotalCost": 451418.79,
-      "OP1Quantity": 1880,
-      "OP1Rate": 149.35,
-      "OP1TotalCost": 464961.34,
-      "OP2Quantity": 1880,
-      "OP2Rate": 153.83,
-      "OP2TotalCost": 478908.63,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 1395288.76,
-      "TotalAccountableProperty": 0.0,
-      "BaseYearFringe": 88595.0,
-      "BaseYearOverhead": 49068.0,
-      "BaseYearGAndA": 38974.99,
-      "BaseYearFCCOM": 2180.8,
-      "OP1Fringe": 91252.85,
-      "OP1Overhead": 50540.04,
-      "OP1GAndA": 40144.23,
-      "OP1FCCOM": 2246.22,
-      "OP2Fringe": 93990.13,
-      "OP2Overhead": 52056.07,
-      "OP2GAndA": 41348.43,
-      "OP2FCCOM": 2313.6,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    },
-    {
-      "LineNumber": 1,
-      "LineDescription": "Security engineering support",
-      "CategoryName": "Labor",
-      "Title": "Security Analyst",
-      "TypeName": "Labor Hours",
-      "UnitsName": "HR - Hours",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "",
-      "IncludesProperty": false,
-      "SerialNumber": "",
-      "Software": true,
-      "BaseYearQuantity": 1880,
-      "BaseYearRate": 98.0,
-      "BaseYearTotalCost": 305096.83,
-      "OP1Quantity": 1880,
-      "OP1Rate": 100.94,
-      "OP1TotalCost": 314249.75,
-      "OP2Quantity": 1880,
-      "OP2Rate": 103.97,
-      "OP2TotalCost": 323682.84,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 943029.42,
-      "TotalAccountableProperty": 0.0,
-      "BaseYearFringe": 59878.0,
-      "BaseYearOverhead": 33163.2,
-      "BaseYearGAndA": 26341.71,
-      "BaseYearFCCOM": 1473.92,
-      "OP1Fringe": 61674.34,
-      "OP1Overhead": 34158.1,
-      "OP1GAndA": 27131.97,
-      "OP1FCCOM": 1518.14,
-      "OP2Fringe": 63525.67,
-      "OP2Overhead": 35183.45,
-      "OP2GAndA": 27946.41,
-      "OP2FCCOM": 1563.71,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    },
-    {
-      "LineNumber": 2,
-      "LineDescription": "Endpoint agent licences",
-      "CategoryName": "Products/Supplies",
-      "Title": "Endpoint agent, per seat",
-      "TypeName": "Fixed Price",
-      "UnitsName": "EA - Each",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "",
-      "IncludesProperty": false,
-      "SerialNumber": "",
-      "Software": false,
-      "BaseYearQuantity": 1200,
-      "BaseYearRate": 42.0,
-      "BaseYearTotalCost": 50400.0,
-      "OP1Quantity": 1200,
-      "OP1Rate": 43.26,
-      "OP1TotalCost": 51912.0,
-      "OP2Quantity": 1200,
-      "OP2Rate": 44.56,
-      "OP2TotalCost": 53472.0,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 155784.0,
-      "TotalAccountableProperty": 0.0,
-      "BaseYearFringe": 0.0,
-      "BaseYearOverhead": 0.0,
-      "BaseYearGAndA": 0.0,
-      "BaseYearFCCOM": 0.0,
-      "OP1Fringe": 0.0,
-      "OP1Overhead": 0.0,
-      "OP1GAndA": 0.0,
-      "OP1FCCOM": 0.0,
-      "OP2Fringe": 0.0,
-      "OP2Overhead": 0.0,
-      "OP2GAndA": 0.0,
-      "OP2FCCOM": 0.0,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    },
-    {
-      "LineNumber": 3,
-      "LineDescription": "Site visits",
-      "CategoryName": "Travel",
-      "Title": "Trip to regional office",
-      "TypeName": "Cost Reimbursement",
-      "UnitsName": "EA - Each",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "",
-      "IncludesProperty": false,
-      "SerialNumber": "",
-      "Software": false,
-      "BaseYearQuantity": 4,
-      "BaseYearRate": 1850.0,
-      "BaseYearTotalCost": 7400.0,
-      "OP1Quantity": 4,
-      "OP1Rate": 1905.5,
-      "OP1TotalCost": 7622.0,
-      "OP2Quantity": 4,
-      "OP2Rate": 1962.66,
-      "OP2TotalCost": 7850.64,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 22872.64,
-      "TotalAccountableProperty": 0.0,
-      "BaseYearFringe": 0.0,
-      "BaseYearOverhead": 0.0,
-      "BaseYearGAndA": 0.0,
-      "BaseYearFCCOM": 0.0,
-      "OP1Fringe": 0.0,
-      "OP1Overhead": 0.0,
-      "OP1GAndA": 0.0,
-      "OP1FCCOM": 0.0,
-      "OP2Fringe": 0.0,
-      "OP2Overhead": 0.0,
-      "OP2GAndA": 0.0,
-      "OP2FCCOM": 0.0,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    },
-    {
-      "LineNumber": 4,
-      "LineDescription": "Test lab workstations",
-      "CategoryName": "Accountable Property",
-      "Title": "Lab workstation",
-      "TypeName": "Fixed Price",
-      "UnitsName": "EA - Each",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "Capitalized Equipment",
-      "IncludesProperty": true,
-      "SerialNumber": "WS-0001",
-      "Software": false,
-      "BaseYearQuantity": 6,
-      "BaseYearRate": 3200.0,
-      "BaseYearTotalCost": 19200.0,
-      "OP1Quantity": 6,
-      "OP1Rate": 3296.0,
-      "OP1TotalCost": 19776.0,
-      "OP2Quantity": 6,
-      "OP2Rate": 3394.88,
-      "OP2TotalCost": 20369.28,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 59345.28,
-      "TotalAccountableProperty": 59345.28,
-      "BaseYearFringe": 0.0,
-      "BaseYearOverhead": 0.0,
-      "BaseYearGAndA": 0.0,
-      "BaseYearFCCOM": 0.0,
-      "OP1Fringe": 0.0,
-      "OP1Overhead": 0.0,
-      "OP1GAndA": 0.0,
-      "OP1FCCOM": 0.0,
-      "OP2Fringe": 0.0,
-      "OP2Overhead": 0.0,
-      "OP2GAndA": 0.0,
-      "OP2FCCOM": 0.0,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    },
-    {
-      "LineNumber": 4,
-      "LineDescription": "Test lab workstations",
-      "CategoryName": "Accountable Property",
-      "Title": "Lab monitor",
-      "TypeName": "Fixed Price",
-      "UnitsName": "EA - Each",
-      "OtherCostsCategoryName": "",
-      "PropertyTypeName": "Noncapitalized equipment",
-      "IncludesProperty": true,
-      "SerialNumber": "",
-      "Software": false,
-      "BaseYearQuantity": 6,
-      "BaseYearRate": 410.0,
-      "BaseYearTotalCost": 2460.0,
-      "OP1Quantity": 6,
-      "OP1Rate": 422.3,
-      "OP1TotalCost": 2533.8,
-      "OP2Quantity": 6,
-      "OP2Rate": 434.97,
-      "OP2TotalCost": 2609.82,
-      "OP3Quantity": null,
-      "OP3Rate": null,
-      "OP3TotalCost": null,
-      "OP4Quantity": null,
-      "OP4Rate": null,
-      "OP4TotalCost": null,
-      "TotalCost": 7603.62,
-      "TotalAccountableProperty": 7603.62,
-      "BaseYearFringe": 0.0,
-      "BaseYearOverhead": 0.0,
-      "BaseYearGAndA": 0.0,
-      "BaseYearFCCOM": 0.0,
-      "OP1Fringe": 0.0,
-      "OP1Overhead": 0.0,
-      "OP1GAndA": 0.0,
-      "OP1FCCOM": 0.0,
-      "OP2Fringe": 0.0,
-      "OP2Overhead": 0.0,
-      "OP2GAndA": 0.0,
-      "OP2FCCOM": 0.0,
-      "OP3Fringe": null,
-      "OP3Overhead": null,
-      "OP3GAndA": null,
-      "OP3FCCOM": null,
-      "OP4Fringe": null,
-      "OP4Overhead": null,
-      "OP4GAndA": null,
-      "OP4FCCOM": null
-    }
-  ],
-  "PRNumber": "PR-2026-0142",
-  "Email": "you@agency.gov"
-}
+Step 5. Site columns
+Repeat this on every site collection: the hub and each spoke. Site columns do not flow across sites.
+Site settings, Site columns, Create. The internal name is set from the name you type on the first save and can never be changed, so type the internal name first, save, then rename to the display name.
+Internal name (type this first)
+Then rename to
+Type
+CEDocStatus
+Document Status
+Choice
+CEDocCategory
+Document Category
+Choice
+CETechnology
+Technology
+Choice
+CELibrary
+Library
+Choice
+Put all four in a new group called Clean Energy, so they are easy to find when adding them to libraries.
+Shared values, identical on every site:
+• Document Status: Active, Archive
+• Technology: Solar, Wind, Storage, Not technology specific
+Local values, different on every site:
+• Library: that site's library names, spelled exactly as the libraries are named
+• Document Category: that site's top level folder names, excluding Archive folders
+Set Allow fill in choices to No on all four. Fill in choices are how spelling drifts and filter values split in two.
+Step 6. Libraries, columns and defaults
+For every library that will hold documents:
+1. Library settings, Add from existing site columns. Add all four from the Clean Energy group.
+2. Library settings, Column default value settings. This page shows the library root at the top and the folder tree beneath it.
+3. On the library root, set Library to that library's name and Document Status to Active.
+4. On each top level folder, set Document Category to the folder's name.
+5. On any technology folder, set Technology.
+6. On any Archive folder, set Document Status to Archive. Leave its Category empty.
+Watch out for the default Documents library. Every site gets one, and the name is identical across all four sites. Either keep it empty or give it a site specific name, or you will get one meaningless Documents entry in the hub Library filter covering every site.
+Defaults only apply to new files. Anything already in the library needs tagging by hand: open the folder, switch to Edit in grid view, fill the first row, then drag the fill handle down the column.
+Step 7. Search Schema
+Repeat on every site collection, using the same numbers everywhere. This is what makes values from different sites land in the same hub filter.
+First, confirm the crawled properties exist. Site settings, Search Schema, Crawled Properties, search for CEDoc. If nothing comes back, no tagged file has been crawled yet. Tag a few files, wait 30 to 60 minutes, and check again. Crawled properties are shared across the whole tenant, so once they appear on one site they are available everywhere.
+Then map them. Site settings, Search Schema, Managed Properties. Find each RefinableString, click Edit, then Add a Mapping.
+Managed property
+Crawled property
+Alias
+Shows as
+RefinableString180
+ows_CEDocStatus
+CEDocStatus
+Document Status
+RefinableString181
+ows_CEDocCategory
+CEDocCategory
+Document Category
+RefinableString182
+ows_CETechnology
+CETechnology
+Technology
+RefinableString183
+ows_CELibrary
+CELibrary
+Library
+Then reindex. Site settings, Search and offline availability, Reindex site. Do this once, after all four mappings are saved. A mapping change only reaches a file when that file is crawled again.
+Step 8. Search vertical and filters
+Do this on the hub first, because that is where cross site filtering happens. Repeat on each spoke so people can filter without leaving their own site.
+Path: gear, Site information, View all site settings, then Search insights and configuration under Microsoft Search. This is not the old Search Settings page.
+1. Go to Verticals, open Files, then Edit.
+2. Click through to Filters, then Add a filter for each row below.
+3. Set every one to Multiple values.
+4. Finish the wizard, save, and confirm the Files vertical shows as On.
+Property
+Filter name
+RefinableString180
+Document Status
+RefinableString181
+Document Category
+RefinableString182
+Technology
+RefinableString183
+Library
+DisplayAuthor
+Author
+Do not add SPSiteURL. It shows raw URLs, which nobody can read. The Library filter already tells people which site a file came from, because library names are unique.
