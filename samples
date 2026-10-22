@@ -1,44 +1,199 @@
-## The six use cases
-
-Ranked by how soon each can deliver value.
-
-| # | Use case | Site | The need today | Where the value comes from | Grounded in | Technology |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | Document finder | All three | A file can sit in any of three sites and dozens of folders, so people ask a colleague or rebuild work that already exists | Minutes on every lookup, and less duplicated work | Every library in the hub, scoped by the Library, Category and Technology tags | M365 Copilot over the hub search scope |
-| 2 | Development process assistant | Internal, External | Stage gate and handoff knowledge sits with a few experienced people who are interrupted constantly. The process map and RASCI exist but are rarely opened | Answers without interrupting an expert, faster onboarding, fewer reworks at stage gates | Development Process Database: process maps, RASCI, stage gate checklists, templates | A SharePoint agent scoped to one library |
-| 3 | Meeting and decision follow-up | All three | Actions and decisions from CET, board and committee reviews live in individual notes | Nothing dropped between meetings | Teams meetings and chats. No SharePoint content at all | Copilot in Teams |
-| 4 | Customer request support | Renewable Solutions | Responding to a customer request means pulling product, program and prior proposal material together for each opportunity | Faster turnaround on customer requests, and consistent answers across the team | Sales and Customer Requests libraries, plus approved product and program material | A SharePoint agent scoped to the sales libraries |
-| 5 | Partner self-service | External | Partners need documents and process answers that already sit on the External site | Partners find answers themselves, and less staff time spent relaying documents | External site libraries only, nothing internal | A SharePoint agent scoped to the External site |
-| 6 | Draft from approved templates | Internal, Renewable Solutions | Recurring documents such as SUP applications, RFP bids and decommissioning plans start from a blank page or whatever file was handy | Hours per first draft, and fewer review cycles | Approved templates plus prior approved documents in the same Category | Copilot in Word over an approved template set |
-| 7 | Contract and RFP intelligence | Internal | Reviewing a contract or bid means reading across versions, prior agreements and related correspondence | Less time assembling the picture before a review, and a fuller record of what was agreed before | Contracts, proposals, negotiation history and award material | Copilot Studio agent |
-| 8 | Project status briefing | Internal, Renewable Solutions | A status update means pulling from the PSF Dashboard, project trackers, decks and people | Hours per briefing, on every project, every cycle | Project trackers, schedules, handoff records and approved reports. None of this is structured today | Copilot Studio agent over a structured project list |
-| 9 | Permitting and community research | Internal | Requirements, prior cases and public sentiment for a new site are gathered from many sources each time | Less time assembling research per site, and a more consistent starting picture | Permit records, ordinances and regulatory filings, plus approved external sources | Copilot Studio agent with external connectors |
-
-Rows 1 to 3 and 6 describe work we have observed directly. Rows 4, 5, 7, 8 and 9 are our reading of how the work is done today, and each is worth confirming with the team that owns it.
-
-Only 7, 8 and 9 justify Copilot Studio, and 9 sits largely outside SharePoint. Treating all nine as Copilot Studio work would roughly triple the estimate for the same capability.
-
-## Phasing
-
-Each phase unlocks the next. Content readiness sets the order.
-
-| Phase | Use cases | Build effort | Unlocked by |
-| --- | --- | --- | --- |
-| 1. This quarter, on the pilot sites | 1 to 3 | None to low. No code | The hub, the four tags, and clean permissions on the pilot sites |
-| 2. After migration | 4 to 7 | Low to moderate | Content tagged on the way in, a way to mark the approved version, and a partner permission review before 5 |
-| 3. Needs new foundations | 8, 9 | High. The data has to be built first | Project data held somewhere queryable, and a reviewed set of external sources |
-
-Phase 3 is a data project before it is an AI project. Without the underlying data in place, an agent gives confident answers that are often wrong.
-
-## What has to be true first
-
-Six decisions gate the roadmap. Three are already in front of the Working Group for other reasons.
-
-| Decision | Blocks | Status |
-| --- | --- | --- |
-| How archived content is treated | 1, 6, 7 | Open. Archive in place keeps old documents visible to AI, the main cause of confidently outdated answers |
-| How the approved or current version is marked | 6, 7 | Not yet raised. Needs a Status value beyond Active and Archive |
-| Permission cleanup on the pilot sites | 1, 2, 4 | In progress through the reorg |
-| What partners may reach through an agent | 5 | Not yet raised. An agent on External inherits whatever that site exposes |
-| Where project data will live | 8 | Not yet raised. Today it lives in decks and trackers |
-| Which external sources are approved | 9 | Not yet raised. Needs legal and compliance review |
+/---
+=UpdateContext({ locExporting: true });
+With(
+    { lines: Filter(IGCELine_IGCE_SPList, IGCEHeaderID = glIGCE.ID) },
+    // Each line's sublines, with the line's number, description and category
+    Clear(colExportSublines);
+    ForAll(
+        lines As l,
+        Collect(
+            colExportSublines,
+            ShowColumns(
+                AddColumns(
+                    Filter(IGCESubLine_IGCE_SPList, IGCELineID = l.ID),
+                    LineNumber, l.LineNumber,
+                    LineDescription, l.Description,
+                    CategoryName, l.Category.Value,
+                    TypeName, SublineType.Value,
+                    UnitsName, Units.Value,
+                    OtherCostsCategoryName, OtherCostsCategory.Value,
+                    PropertyTypeName, PropertyType.Value
+                ),
+                LineNumber,
+                LineDescription,
+                CategoryName,
+                Title,
+                TypeName,
+                UnitsName,
+                OtherCostsCategoryName,
+                PropertyTypeName,
+                IncludesProperty,
+                SerialNumber,
+                Software,
+                BaseYearQuantity,
+                BaseYearRate,
+                BaseYearTotalCost,
+                OP1Quantity,
+                OP1Rate,
+                OP1TotalCost,
+                OP2Quantity,
+                OP2Rate,
+                OP2TotalCost,
+                OP3Quantity,
+                OP3Rate,
+                OP3TotalCost,
+                OP4Quantity,
+                OP4Rate,
+                OP4TotalCost,
+                TotalCost,
+                TotalAccountableProperty,
+                BaseYearFringe,
+                BaseYearOverhead,
+                BaseYearGAndA,
+                BaseYearFCCOM,
+                OP1Fringe,
+                OP1Overhead,
+                OP1GAndA,
+                OP1FCCOM,
+                OP2Fringe,
+                OP2Overhead,
+                OP2GAndA,
+                OP2FCCOM,
+                OP3Fringe,
+                OP3Overhead,
+                OP3GAndA,
+                OP3FCCOM,
+                OP4Fringe,
+                OP4Overhead,
+                OP4GAndA,
+                OP4FCCOM
+            )
+        )
+    );
+    With(
+        {
+            result: IGCEExportExcelTables.Run(
+                JSON(
+                    {
+                        Header: First(
+                            ShowColumns(
+                                AddColumns(
+                                    Table(glIGCE),
+                                    Key, "h",
+                                    PRNumber, glPRTracker,
+                                    RequirementName, LookUp(RequirementTracker_IGCE_SPList, ID = Value(glPRID)).Title,
+                                    IGCETypeName, IGCEType.Value,
+                                    StatusName, Status.Value,
+                                    POCName, PointOfContact.DisplayName,
+                                    CORName, COR.DisplayName,
+                                    BaseStart, Text(BasePeriodStart, "mm/dd/yyyy"),
+                                    BaseEnd, Text(BasePeriodEnd, "mm/dd/yyyy"),
+                                    OP1Start, Text(OptionPeriod1Start, "mm/dd/yyyy"),
+                                    OP1End, Text(OptionPeriod1End, "mm/dd/yyyy"),
+                                    OP2Start, Text(OptionPeriod2Start, "mm/dd/yyyy"),
+                                    OP2End, Text(OptionPeriod2End, "mm/dd/yyyy"),
+                                    OP3Start, Text(OptionPeriod3Start, "mm/dd/yyyy"),
+                                    OP3End, Text(OptionPeriod3End, "mm/dd/yyyy"),
+                                    OP4Start, Text(OptionPeriod4Start, "mm/dd/yyyy"),
+                                    OP4End, Text(OptionPeriod4End, "mm/dd/yyyy"),
+                                    PreparedBy, User().FullName,
+                                    PreparedOn, Text(Now(), "mm/dd/yyyy h:mm AM/PM")
+                                ),
+                                Key,
+                                PRNumber,
+                                Title,
+                                PRID,
+                                RequirementName,
+                                IGCETypeName,
+                                StatusName,
+                                POCName,
+                                CORName,
+                                OptionPeriods,
+                                BaseStart,
+                                BaseEnd,
+                                OP1Start,
+                                OP1End,
+                                OP2Start,
+                                OP2End,
+                                OP3Start,
+                                OP3End,
+                                OP4Start,
+                                OP4End,
+                                FringeRate,
+                                OverheadRate,
+                                GAndARate,
+                                FCCOMRate,
+                                ProfitFeeRate,
+                                ContractAccessFeeRate,
+                                InflationRate,
+                                TotalAccountableProperty,
+                                ContainsGFP,
+                                GFPQ1,
+                                GFPQ2,
+                                GFPQ3,
+                                GFPQ4,
+                                GFPQ5,
+                                GFPQ6,
+                                InformationObtainedFrom,
+                                InformationToolsUsed,
+                                PreviousContracts,
+                                LaborBasis,
+                                LaborCategoriesBasis,
+                                LaborRatesBasis,
+                                HoursBasis,
+                                UnburdenedDirectLaborBasis,
+                                IndirectRatesBasis,
+                                GAndABasis,
+                                FCCOMBasis,
+                                FixedFeeBasis,
+                                IndirectBurdenBasis,
+                                DirectMaterialBasis,
+                                ProductsSuppliesBasis,
+                                SubcontractsBasis,
+                                ODCBasis,
+                                TravelBasis,
+                                Assumptions,
+                                PreparedBy,
+                                PreparedOn
+                            )
+                        ),
+                        Lines: ShowColumns(
+                            AddColumns(
+                                lines,
+                                CategoryName, Category.Value
+                            ),
+                            ID,
+                            LineNumber,
+                            Description,
+                            CategoryName,
+                            BaseYearQuantity,
+                            BaseYearTotalCost,
+                            OP1Quantity,
+                            OP1TotalCost,
+                            OP2Quantity,
+                            OP2TotalCost,
+                            OP3Quantity,
+                            OP3TotalCost,
+                            OP4Quantity,
+                            OP4TotalCost,
+                            TotalCost,
+                            TotalAccountableProperty
+                        ),
+                        Sublines: colExportSublines,
+                        PRNumber: glPRTracker,
+                        Email: User().Email
+                    },
+                    JSONFormat.IgnoreBinaryData
+                ),
+                "IGCE " & glPRTracker & " " & Text(Now(), "yyyy-mm-dd hhmmss") & ".xlsx"
+            )
+        },
+        // The flow answers once the empty workbook exists and emails the link when it is filled.
+        If(
+            result.ok,
+            Notify(result.message, NotificationType.Success, 6000),
+            Notify(Coalesce(result.message, "The export failed."), NotificationType.Error, 6000)
+        )
+    )
+);
+UpdateContext({ locExporting: false })
