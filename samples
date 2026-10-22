@@ -1,81 +1,44 @@
-Step 5. Site columns
-Repeat this on every site collection: the hub and each spoke. Site columns do not flow across sites.
-Site settings, Site columns, Create. The internal name is set from the name you type on the first save and can never be changed, so type the internal name first, save, then rename to the display name.
-Internal name (type this first)
-Then rename to
-Type
-CEDocStatus
-Document Status
-Choice
-CEDocCategory
-Document Category
-Choice
-CETechnology
-Technology
-Choice
-CELibrary
-Library
-Choice
-Put all four in a new group called Clean Energy, so they are easy to find when adding them to libraries.
-Shared values, identical on every site:
-• Document Status: Active, Archive
-• Technology: Solar, Wind, Storage, Not technology specific
-Local values, different on every site:
-• Library: that site's library names, spelled exactly as the libraries are named
-• Document Category: that site's top level folder names, excluding Archive folders
-Set Allow fill in choices to No on all four. Fill in choices are how spelling drifts and filter values split in two.
-Step 6. Libraries, columns and defaults
-For every library that will hold documents:
-1. Library settings, Add from existing site columns. Add all four from the Clean Energy group.
-2. Library settings, Column default value settings. This page shows the library root at the top and the folder tree beneath it.
-3. On the library root, set Library to that library's name and Document Status to Active.
-4. On each top level folder, set Document Category to the folder's name.
-5. On any technology folder, set Technology.
-6. On any Archive folder, set Document Status to Archive. Leave its Category empty.
-Watch out for the default Documents library. Every site gets one, and the name is identical across all four sites. Either keep it empty or give it a site specific name, or you will get one meaningless Documents entry in the hub Library filter covering every site.
-Defaults only apply to new files. Anything already in the library needs tagging by hand: open the folder, switch to Edit in grid view, fill the first row, then drag the fill handle down the column.
-Step 7. Search Schema
-Repeat on every site collection, using the same numbers everywhere. This is what makes values from different sites land in the same hub filter.
-First, confirm the crawled properties exist. Site settings, Search Schema, Crawled Properties, search for CEDoc. If nothing comes back, no tagged file has been crawled yet. Tag a few files, wait 30 to 60 minutes, and check again. Crawled properties are shared across the whole tenant, so once they appear on one site they are available everywhere.
-Then map them. Site settings, Search Schema, Managed Properties. Find each RefinableString, click Edit, then Add a Mapping.
-Managed property
-Crawled property
-Alias
-Shows as
-RefinableString180
-ows_CEDocStatus
-CEDocStatus
-Document Status
-RefinableString181
-ows_CEDocCategory
-CEDocCategory
-Document Category
-RefinableString182
-ows_CETechnology
-CETechnology
-Technology
-RefinableString183
-ows_CELibrary
-CELibrary
-Library
-Then reindex. Site settings, Search and offline availability, Reindex site. Do this once, after all four mappings are saved. A mapping change only reaches a file when that file is crawled again.
-Step 8. Search vertical and filters
-Do this on the hub first, because that is where cross site filtering happens. Repeat on each spoke so people can filter without leaving their own site.
-Path: gear, Site information, View all site settings, then Search insights and configuration under Microsoft Search. This is not the old Search Settings page.
-1. Go to Verticals, open Files, then Edit.
-2. Click through to Filters, then Add a filter for each row below.
-3. Set every one to Multiple values.
-4. Finish the wizard, save, and confirm the Files vertical shows as On.
-Property
-Filter name
-RefinableString180
-Document Status
-RefinableString181
-Document Category
-RefinableString182
-Technology
-RefinableString183
-Library
-DisplayAuthor
-Author
-Do not add SPSiteURL. It shows raw URLs, which nobody can read. The Library filter already tells people which site a file came from, because library names are unique.
+## The six use cases
+
+Ranked by how soon each can deliver value.
+
+| # | Use case | Site | The need today | Where the value comes from | Grounded in | Technology |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Document finder | All three | A file can sit in any of three sites and dozens of folders, so people ask a colleague or rebuild work that already exists | Minutes on every lookup, and less duplicated work | Every library in the hub, scoped by the Library, Category and Technology tags | M365 Copilot over the hub search scope |
+| 2 | Development process assistant | Internal, External | Stage gate and handoff knowledge sits with a few experienced people who are interrupted constantly. The process map and RASCI exist but are rarely opened | Answers without interrupting an expert, faster onboarding, fewer reworks at stage gates | Development Process Database: process maps, RASCI, stage gate checklists, templates | A SharePoint agent scoped to one library |
+| 3 | Meeting and decision follow-up | All three | Actions and decisions from CET, board and committee reviews live in individual notes | Nothing dropped between meetings | Teams meetings and chats. No SharePoint content at all | Copilot in Teams |
+| 4 | Customer request support | Renewable Solutions | Responding to a customer request means pulling product, program and prior proposal material together for each opportunity | Faster turnaround on customer requests, and consistent answers across the team | Sales and Customer Requests libraries, plus approved product and program material | A SharePoint agent scoped to the sales libraries |
+| 5 | Partner self-service | External | Partners need documents and process answers that already sit on the External site | Partners find answers themselves, and less staff time spent relaying documents | External site libraries only, nothing internal | A SharePoint agent scoped to the External site |
+| 6 | Draft from approved templates | Internal, Renewable Solutions | Recurring documents such as SUP applications, RFP bids and decommissioning plans start from a blank page or whatever file was handy | Hours per first draft, and fewer review cycles | Approved templates plus prior approved documents in the same Category | Copilot in Word over an approved template set |
+| 7 | Contract and RFP intelligence | Internal | Reviewing a contract or bid means reading across versions, prior agreements and related correspondence | Less time assembling the picture before a review, and a fuller record of what was agreed before | Contracts, proposals, negotiation history and award material | Copilot Studio agent |
+| 8 | Project status briefing | Internal, Renewable Solutions | A status update means pulling from the PSF Dashboard, project trackers, decks and people | Hours per briefing, on every project, every cycle | Project trackers, schedules, handoff records and approved reports. None of this is structured today | Copilot Studio agent over a structured project list |
+| 9 | Permitting and community research | Internal | Requirements, prior cases and public sentiment for a new site are gathered from many sources each time | Less time assembling research per site, and a more consistent starting picture | Permit records, ordinances and regulatory filings, plus approved external sources | Copilot Studio agent with external connectors |
+
+Rows 1 to 3 and 6 describe work we have observed directly. Rows 4, 5, 7, 8 and 9 are our reading of how the work is done today, and each is worth confirming with the team that owns it.
+
+Only 7, 8 and 9 justify Copilot Studio, and 9 sits largely outside SharePoint. Treating all nine as Copilot Studio work would roughly triple the estimate for the same capability.
+
+## Phasing
+
+Each phase unlocks the next. Content readiness sets the order.
+
+| Phase | Use cases | Build effort | Unlocked by |
+| --- | --- | --- | --- |
+| 1. This quarter, on the pilot sites | 1 to 3 | None to low. No code | The hub, the four tags, and clean permissions on the pilot sites |
+| 2. After migration | 4 to 7 | Low to moderate | Content tagged on the way in, a way to mark the approved version, and a partner permission review before 5 |
+| 3. Needs new foundations | 8, 9 | High. The data has to be built first | Project data held somewhere queryable, and a reviewed set of external sources |
+
+Phase 3 is a data project before it is an AI project. Without the underlying data in place, an agent gives confident answers that are often wrong.
+
+## What has to be true first
+
+Six decisions gate the roadmap. Three are already in front of the Working Group for other reasons.
+
+| Decision | Blocks | Status |
+| --- | --- | --- |
+| How archived content is treated | 1, 6, 7 | Open. Archive in place keeps old documents visible to AI, the main cause of confidently outdated answers |
+| How the approved or current version is marked | 6, 7 | Not yet raised. Needs a Status value beyond Active and Archive |
+| Permission cleanup on the pilot sites | 1, 2, 4 | In progress through the reorg |
+| What partners may reach through an agent | 5 | Not yet raised. An agent on External inherits whatever that site exposes |
+| Where project data will live | 8 | Not yet raised. Today it lives in decks and trackers |
+| Which external sources are approved | 9 | Not yet raised. Needs legal and compliance review |
